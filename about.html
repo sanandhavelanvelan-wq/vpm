@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+	<style>
+		.header{
+		background: steelblue;
+		color:white;
+		padding: 20px;
+		text-align: center;
+	}
+	.row 
+	{
+		display: flex;
+	}
+
+	.j{
+		flex: 60%;
+		height: 300px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.p{
+		flex: 20%;
+		height: 400px;
+		padding: 10px;
+		text-align: center;
+	}
+
+
+	.k{
+		flex: 20%;
+		height: 200px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.l{
+		flex: 20%;
+		height: 200px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.m{
+		flex: 20%;
+		height: 200px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.n{
+		flex: 20%;
+		height: 200px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.o{
+		flex: 20%;
+		height: 200px;
+		padding: 10px;
+		text-align: center;
+	}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+}
+
+.footer {
+    position: relative;
+    background-color: #0e0e0e;
+    color: #ffffff;
+    border-top: 2px solid #f47721;
+    padding: 100px 6% 38px;
+    min-height: 680px;
+}
+
+/* Main Footer Layout */
+.footer-main {
+    display: grid;
+    grid-template-columns: 2.8fr 1.1fr 0.65fr 0.9fr;
+    gap: 55px;
+    align-items: start;
+}
+
+/* Award Logo */
+.footer-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer-logo img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Footer Columns */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.footer-column h3 {
+    color: #858585;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    white-space: nowrap;
+}
+
+.footer-column a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 21px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover,
+.legal-links a:hover {
+    color: #f47721;
+}
+
+/* Bottom Footer */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 75px;
+    font-size: 15px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #111111;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #f47721;
+    color: #ffffff;
+}
+
+.copyright {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.legal-links {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.legal-links a {
+    color: #eeeeee;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Scroll-to-top Button */
+.scroll-top {
+    position: absolute;
+    right: 36px;
+    bottom: 50px;
+    width: 53px;
+    height: 53px;
+    border: none;
+    border-radius: 50%;
+    background: #c85d13;
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.scroll-top:hover {
+    background: #f47721;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .footer {
+        padding: 60px 5% 35px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo img {
+        width: 220px;
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+        margin-top: 60px;
+    }
+
+    .copyright {
+        margin-left: 0;
+    }
+
+    .legal-links {
+        gap: 25px;
+    }
+
+    .scroll-top {
+        right: 20px;
+        bottom: 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .footer {
+        padding: 45px 25px 35px;
+        min-height: auto;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 20px;
+    }
+
+    .footer-logo {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+
+    .footer-logo img {
+        width: 200px;
+    }
+
+    .footer-column {
+        gap: 18px;
+    }
+
+    .footer-column h3 {
+        font-size: 19px;
+        white-space: normal;
+        margin-bottom: 5px;
+    }
+
+    .footer-column a {
+        font-size: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+        margin-top: 50px;
+        padding-bottom: 55px;
+    }
+
+    .social-icons {
+        gap: 22px;
+    }
+
+    .copyright {
+        margin-left: 0;
+    }
+
+    .legal-links {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .scroll-top {
+        right: 20px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+</style>
+<body>
+
+
+	<div class="x">
+		<div class="header">
+			 <a href="index.html">Index</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="kids.html">Kids</a>
+            <a href="contact1.html">Contact1</a>
+
+	</div>
+
+		<div class="row">
+		<div class="j">
+			<img src="cycl2.jpg" width="60%">
+		</div>
+
+		<div class="p">
+            <br>
+            <br>
+            <br>
+            <br>
+			<p>Established in 1949 by the Murugappa Group in collaboration with Tube Investments (UK), TI Cycles has transitioned from just dealing with bicycle manufacture and design to becoming an expert in mobility and well-being solutions. Known best for its flagship bicycle brands – BSA, Hercules, Montra and Mach City, TI Cycles has practically created and perfected every new cycle category in the country – the first MTB, the first geared bike, the first Shox model, the first girls bike, the first kids bike, the first light roadster, the first carbon frame bike and India’s first cycling café. The first Hercules bicycle rolled out in 1951 – the first of many. TI Cycles has plants at Chennai & Rajpura and major warehouses at Guwahati & Chennai through which it serves a nationwide 1,200 plus dealer-network.</p>
+	</div>
+</div>
+
+	<div class="row">
+		<div class="k">
+			<img src="ab1.png" width="80%">
+		</div>
+	    <div class="l">
+            <br>
+	    	<img src="ab2.png" width="80%">
+	    </div>
+	    <div class="m">
+	    	<img src="ab3.png" width="80%">
+	    </div>
+	    <div class="n">
+	    	<img src="ab4.png" width="80%">
+	    </div>
+	    <div class="o">
+            <br>
+	    	<img src="ab5.png" width="100%">
+	    </div>
+	</div>
+	
+
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <!-- Award Logo -->
+            <div class="footer-logo">
+                <img src="bsa1.png" alt="BSA Superbrands Award">
+            </div>
+
+            <!-- Our Range -->
+            <div class="footer-column">
+                <h3>Our Range</h3>
+                <a href="#">Kids</a>
+                <a href="#">LB</a>
+                <a href="#">Ladybird</a>
+                <a href="#">All Bikes</a>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="#">Warranty Registration</a>
+                <a href="#">Find A Store</a>
+                <a href="#">Contact us</a>
+                <a href="#">FAQs</a>
+                <a href="#">Shipping and Returns</a>
+            </div>
+
+            <!-- Other Links -->
+            <div class="footer-column">
+                <h3>Other links</h3>
+                <a href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">News</a>
+                <a href="#">Gallery</a>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+
+            <p class="copyright">© 2026 BSA</p>
+
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+            </div>
+
+        </div>
+
+        <!-- Scroll to Top -->
+        <button class="scroll-top"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                aria-label="Scroll to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+
+    </footer>
+
+    </div>
+</body>
+<script>
+    const app=Vue.createapp({
+        data(){
+            return{
+                
+
+            }
+        }
+    })
+    app.mount("#x")
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
